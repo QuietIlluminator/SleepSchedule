@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=12.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dosis">
+  <title>Sleep Log</title>
+
+  <style>
+    body {
+      font-family: 'Lato', Helvetica, sans-serif;
+      text-decoration: none;
+    }
+
+    .wrapper {
+      max-width: 100%;
+      margin: auto;
+      text-decoration: none;
+    }
+
+    .navbar-default .navbar-nav>.active>a,
+    .navbar-default .navbar-nav>.active>a:hover,
+    .navbar-default .navbar-nav>.active>a:focus {
+      color: blue;
+      /*BACKGROUND color for active*/
+      text-decoration: none;
+      background-color: #01268b;
+    }
+
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #01268b;
+      color: white;
+      text-align: center;
+    }
+
+
+
+    .navbar-default .navbar-nav>a:active {
+      text-decoration: none;
+    }
+
+    .navbar-default .navbar-nav>li>a:hover,
+    .navbar-default .navbar-nav>li>a:focus {
+      color: #000;
+      /*Sets the text hover color on navbar*/
+      text-decoration: underline;
+
+    }
+
+    .navbar-default .navbar-nav>li>a:hover,
+    .navbar-default .navbar-nav>li>a:active {
+      text-decoration: underline;
+    }
+
+
+    a {
+      transition: all 0.2s linear;
+    }
+
+
+
+    .navbar-default {
+      background-color: #01268b;
+      border-color: #01268b;
+      height: 113px;
+      font-size: 24px;
+      padding-right: 37px;
+      padding-left: 37px;
+      padding-top: 1px;
+      text-decoration: none;
+
+    }
+
+    .dropdown-menu>li>a:hover,
+    .dropdown-menu>li>a:focus {
+      color: #262626;
+      text-decoration: none;
+      background-color: #66CCFF;
+      /*change color of links in drop down here*/
+    }
+
+    .nav>li>a:hover,
+    .nav>li>a:focus {
+      text-decoration: none;
+    }
+
+    .navbar-default .navbar-nav>li>a {
+      color: white;
+      /*Change active text color here*/
+    }
+
+    header {
+      background-color: #01268b;
+      flex: 0 0 40px;
+      color: white;
+      padding: 10px;
+    }
+
+    header nav {
+      background-color: transparent;
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      font-family: 'Dosis', sans-serif;
+    }
+
+    header nav ul {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    header nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+    }
+
+    nav {
+      background-color: #f0f0f0;
+    }
+
+    nav ul li {
+      list-style-type: none;
+      padding: 23px 119px;
+      display: inline-flex;
+      justify-content: space-around;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    a {
+      transition: all 0.2s linear;
+    }
+
+    a:hover,
+    a:focus {
+      color: #000000;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-default">
+      <div class="container-fullwidth">
+        <div class="navbar-header">
+          <a class="navbar-brand"></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="playlist.html">Goodnight, Moon</a></li>
+          <li><a href="sleepLog.html">Sleep Log</a></li>
+          <li><a href="sleepChart.html">Keeping Track</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <form onsubmit="return false;">
+        <div class="row">
+          <h3>Daily Sleep</h3>
+          <div class="form-group col-md-1">
+            <label for="sundayHours" class="formtext">Sunday: </label>
+            <input type="number" class="form-control" id="sundayHours" placeholder="Hours"></input>
+          </div>
+          <div class="form-group col-md-1">
+            <label for="mondayHours" class="formtext">Monday: </label>
+            <input type="number" class="form-control" id="mondayHours" placeholder="Hours"></input>
+          </div>
+          <div class="form-group col-md-1">
+            <label for="tuesdayHours" class="formtext">Tuesday: </label>
+            <input type="number" class="form-control" id="tuesdayHours" placeholder="Hours"></input>
+          </div>
+          <div class="form-group col-md-1">
+            <label for="wednesdayHours" class="formtext">Wednesday:</label>
+            <input type="number" class="form-control" id="wednesdayHours" placeholder="Hours"></input>
+          </div>
+          <div class="form-group col-md-1">
+            <label for="thursdayHours" class="formtext">Thursday: </label>
+            <input type="number" class="form-control" id="thursdayHours" placeholder="Hours"></input>
+          </div>
+          <div class="form-group col-md-1">
+            <label for="fridayHours" class="formtext">Friday: </label>
+            <input type="number" class="form-control" id="fridayHours" placeholder="Hours"></input>
+          </div>
+          <div class="form-group col-md-1">
+            <label for="saturdayHours" class="formtext">Saturday: </label>
+            <input type="number" class="form-control" id="saturdayHours" name="saturdayHours"
+              placeholder="Hours"></input>
+          </div>
+        </div>
+        <button type="submit" onclick="display()" class="btn btn-primary btn-block">Graph</button>
+      </form>
+    </div>
+
+    <div class="wrapper">
+      <canvas id="myChart" width="1600" height="800" margin="50"></canvas>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+<div class="footer">
+  <p>Created for HackJa 2021</p>
+</div>
+
+</html>
+
+<!-- get day and hours from form and assign variable to each
+set array [x] and [y] for each variable
+concantate with existing x and y arrays-->

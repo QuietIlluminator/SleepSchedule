@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis');
+
+.mainGrid {
+  font-family: 'Dosis', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 12fr 1fr;
+  grid-template-rows: auto 50px;
+}
+
+.main {
+  grid-column: 2 / -2;
+}
+
+header {
+  background-color: #01268b;
+  flex: 0 0 40px;
+  color: white;
+  padding: 10px;
+}
+
+header nav {
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: 'Dosis', sans-serif;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+nav {
+  background-color: #f0f0f0;
+}
+
+nav ul li {
+  list-style-type: none;
+  padding: 10px;
+  display: inline-flex;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+a {
+  transition: all 0.2s linear;
+}
+
+a:hover, a:focus {
+  color: #000000;
+}
+
+p {
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 54px;
+  font-weight: 100;
+  line-height: 58px;
+  margin: 30px;
+  text-align: center;
+  font-variant: small-caps;
+  letter-spacing: 3px;
+}
+
+#description{
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.parallaxImage1 {
+  background-image: url("https://i.ibb.co/dGW847x/Screen-Shot-2021-01-08-at-9-26-52-PM.png");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+
+}
+
+.parallaxImage2 {
+  background-image: url("https://lh3.googleusercontent.com/proxy/Z1rDpb3G3f4ZFmxRWIESfHsxt1tPYOY1eduPvCqPMdKz8hY1fd_ENrR76gu8RSdDJ-2YG4dMs4s0rBs3-M6nSma4qgNT4yf2tZQyse2B82cWtcthEPv_XUdPYkd_ZM7qlXi8XDAhHHPTas7ALRgfG8nzHHbYJcav254z75ezyxBpfv_rotRCTjp1qywdizrM8Gel");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.parallaxImage3 {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSofKag5EqtMvkIlqLCF8O_dpzh6k2J9ATB4yfaYd24COnpi0Y:writingandwellness.com/wp-content/uploads/2018/05/Writers-Headaches-Migraines-2.jpg&usqp=CAU");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  background-color: #01268b;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 40px;
+  margin-top: 40px;
+  display: block;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+}
+
+/* playlist.html */
+.flip-cards-holder {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 380px;
+  perspective: 1000px;
+  display: inline-flex;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: rgb(153, 204, 255);
+  color: black;
+}
+
+.flip-card-back {
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-front-heading {
+  font-family: 'Dosis', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  justify-self: center;
+  padding-top: 140px;
+}
+
+.textGrid {
+  grid-column: 2 / -2;
+  padding-top: 15px;
+}
+
+
+
+/*eventlist.html */
+#eventList-header {
+  margin: auto;
+  font-family: 'Lato', Helvetica, sans-serif;
+}
+
+#eventList-holder {
+  width: 100%;
+  padding: 30px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-image: url('https://i.ibb.co/pj4X5hn/Screen-Shot-2021-01-09-at-10-53-00-AM.png');
+  border-radius: 7px;
+  box-shadow: 0px 0px 2px 2px steelblue;
+  background-size: 100%;
+  background-position-y: static;
+}
+
+
+.textField {
+  border: none;
+  border-bottom: 1px solid #3a3a3a;
+  margin: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  outline: none;
+}
+
+/* buttons! */
+button {
+  opacity: 0.9;
+  background-color: #01268b;
+  padding: 10px;
+  margin: 10px;
+  min-width: 150px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+  display: inline-block;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  transition: all 0.5s;
+  cursor: pointer;
+  font-family: 'Dosis', sans-serif;
+}
+
+button:span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+button:hover {
+  background-color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color: black;
+}
+
+
+/* sus stuff */
+
+header {
+  background-color: #01268b;
+  flex: 0 0 40px;
+  color: white;
+  padding: 10px;
+}
+
+header nav {
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-family: 'Dosis', sans-serif;
+}
+
+header nav ol {
+  display: flex;
+  justify-content: space-around;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+nav {
+  background-color: #f0f0f0;
+}
+
+nav ol li {
+  list-style-type: none;
+  padding: 10px;
+  display: inline-flex;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+a {
+  transition: all 0.2s linear;
+}
+
+a:hover, a:focus {
+  color: #000000;
+}
+
+ul {
+  list-style-type: none;
+  font-family: 'Dosis', sans-serif;
+}
+
+.fontD {
+  font-family: 'Dosis', sans-serif;
+}
+
+
+.jumbotron {
+  background-color: rgb(153, 204, 255);
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 10px;
+  padding-bottom: 60px;
+}
+
